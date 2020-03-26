@@ -1,6 +1,19 @@
+import java.sql.Connection;
 import java.util.List;
 
-public class PatientDAOImpl implements PatientDAO {
+public class PatientDAOImp implements PatientDAO {
+    //connect database
+    public static String driverName = "org.sqlite.JDBC";
+    public static String url = "jdbc:sqlite:c:/Final_OOP_361211760041/Hospitall.sqlite";
+    public static Connection conn = null;
+
+    //constant operators
+
+    //CRUD
+
+
+
+
     @Override
     public List<Patient> getAllPatient() {
         return null;
@@ -25,4 +38,4 @@ public class PatientDAOImpl implements PatientDAO {
     public Patient findPatient(int id) {
         return null;
     }
-}
+}//
