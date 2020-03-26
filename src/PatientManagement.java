@@ -6,8 +6,8 @@ public class PatientManagement {
         //create interface constant
         PatientDAO dao = PatientDAOImp.getInstance();
 
-        //Get all P
-        displayAllPatient(dao);
+        //Get all Patient
+        diaplayAllPatient(dao);
         //add new Patient
         //addNewPatient(dao);
         //find Patient by ID
@@ -87,7 +87,7 @@ public class PatientManagement {
         dao.addPatient(newpat);
     }
 
-    private static void displayAllPatient(PatientDAO dao) {
+    private static void diaplayAllPatient(PatientDAO dao) {
         List<Patient> mypat = dao.getAllPatient();
         for (Patient pat:mypat){
             System.out.println(pat.toString());

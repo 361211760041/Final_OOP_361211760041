@@ -96,26 +96,26 @@ public class PatientDAOImp implements PatientDAO {
     }
 
     @Override
-    public void updatePatient(Patient Pat) {
+    public void updatePatient(Patient pat) {
         try {
             conn = DriverManager.getConnection(url);
             PreparedStatement ps = conn.prepareStatement(UPDATE_Pat);
             //set parameter
-            ps.setInt(1,Pat.getP_id());
-            ps.setString(2,Pat.getP_name());
-            ps.setString(3,Pat.getP_gender());
-            ps.setInt(4,Pat.getP_age());
-            ps.setString(5,Pat.getP_address());
-            ps.setString(6,Pat.getP_blood_result());
+            ps.setInt(1,pat.getP_id());
+            ps.setString(2,pat.getP_name());
+            ps.setString(3,pat.getP_gender());
+            ps.setInt(4,pat.getP_age());
+            ps.setString(5,pat.getP_address());
+            ps.setString(6,pat.getP_blood_result());
 
 
 
             int rs = ps.executeUpdate();
             if (rs != 0){
-                System.out.printf("Data with patID%d%n", Pat.getP_id() + "was update.") ;
+                System.out.printf("Data with patID%d%n", pat.getP_id() + "was update.") ;
             }  else{
                 System.out.println("Cloud not update data with patID"
-                        + Pat.getP_id());
+                        + pat.getP_id());
             }
             ps.close();
             conn.close();
