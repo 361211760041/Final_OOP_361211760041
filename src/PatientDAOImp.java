@@ -19,7 +19,7 @@ public class PatientDAOImp implements PatientDAO {
     public static final String DEDETE_Pat = "delete from Patient"+
             " where ep_id =?";
     public static final String FIND_Pat_BY_ID = "select * from Patient"+
-            " where p_id = ?";
+             "where p_blood_result = positive=age > 60";
     //create class instant
     private static PatientDAOImp instant = new PatientDAOImp();
     private Object Pat;
@@ -174,8 +174,8 @@ public class PatientDAOImp implements PatientDAO {
                 pat = new Patient(p_id,p_name,p_gender,p_age,p_address,p_blood_result);
 
             } else {
-                System.out.println("Cloud not found Patient" +
-                        "with patID" +id);
+                System.out.println("Cloud  found Patient age > 60" +
+                        "where p_blood_result = positive" +id);
             }
             rs.close();
             ps.close();
